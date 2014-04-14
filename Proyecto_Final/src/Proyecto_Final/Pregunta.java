@@ -1,7 +1,8 @@
 package Proyecto_Final;
 
+import java.io.*;
 import java.util.*;
-public class Pregunta {
+public class Pregunta implements serializable{
     private int id;
     private String titulo;
     private ArrayList<Opcion>opciones;
