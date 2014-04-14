@@ -9,7 +9,7 @@ public class GuardarPregunta {
       FileOutputStream fos=new FileOutputStream(pregunta);
       ObjectOutputStream oos=new ObjectOutputStream (fos);
                          oos.writeObject(p);
-      file.close();
+      file.close();  //aqui me marca error
   }  
   
   
