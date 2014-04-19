@@ -1,8 +1,8 @@
 package Proyecto_Final;
 
-import java.io.*;
+
 import java.util.*;
-public class Pregunta implements serializable{ //aqui me marco error cuando le agregre el implements me dice qeu si quiero crear la interface
+public class Pregunta{ 
     private int id;
     private String titulo;
     private ArrayList<Opcion>opciones;

@@ -1,24 +1,32 @@
 package Proyecto_Final;
 
 import java.io.*;
+import java.io.File;
+import java.util.ArrayList;
 public class GuardarPregunta {
  
-//METODO GUARDAR
-  public static void guardar(Pregunta p)throws Exception{
-      File pregunta=new File("Mundial.xxx");
-      FileOutputStream fos=new FileOutputStream(pregunta);
-      ObjectOutputStream oos=new ObjectOutputStream (fos);
-                         oos.writeObject(p);
-      file.close();  //aqui me marca error
-  }  
-  
-  
-  //METODO LEER
-  public static Pregunta leer()throws Exception{
-      File pregunta=new File("Mundial.xxx");
-      FileInputStream fis=new FileInputStream(pregunta);
-      ObjectInputStream ois=new ObjectInputStream (fis);
-      Pregunta p=(Pregunta) ois.readObject();
-      return p;
+public synchronized static ArrayList<Usuario> leer()throws Exception{
+   File mundial=new File("mundial.xxxx");    
+ 
+    FileInputStream fis=new FileInputStream(mundial);
+    ObjectInputStream  ois=new ObjectInputStream(fis);
+  ArrayList<Usuario> u=(ArrayList<Usuario>)  ois.readObject();
+  ois.close();
+  return u;
   }
+    
+    public static void guardar(Usuario u)throws Exception{
+        ArrayList usuarios=new ArrayList<Usuario>();
+        
+       File mundial=new File("mundial.xxxx");    
+         if(mundial.exists()){
+           usuarios=  leer();
+         }
+    FileOutputStream fis=new FileOutputStream(mundial);
+    ObjectOutputStream  ois=new ObjectOutputStream(fis);
+    usuarios.add(u);
+     ois.writeObject(usuarios); 
+    ois.close();
+  System.out.println("Guardado");
+    }
 }
