@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class GuardarPregunta {
  
 public synchronized static ArrayList<Usuario> leer()throws Exception{
-   File mundial=new File("mundial.xxxx");    
+   File mundial=new File("mundial.brasil");    
  
     FileInputStream fis=new FileInputStream(mundial);
     ObjectInputStream  ois=new ObjectInputStream(fis);
@@ -18,7 +18,7 @@ public synchronized static ArrayList<Usuario> leer()throws Exception{
     public static void guardar(Usuario u)throws Exception{
         ArrayList usuarios=new ArrayList<Usuario>();
         
-       File mundial=new File("mundial.xxxx");    
+       File mundial=new File("mundial.brasil");    
          if(mundial.exists()){
            usuarios=  leer();
          }
