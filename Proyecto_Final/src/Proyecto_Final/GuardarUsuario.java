@@ -3,7 +3,7 @@ package Proyecto_Final;
 import java.io.*;
 import java.io.File;
 import java.util.ArrayList;
-public class GuardarPregunta {
+public class GuardarUsuario {
  
 public synchronized static ArrayList<Usuario> leer()throws Exception{
    File mundial=new File("mundial.brasil");    
